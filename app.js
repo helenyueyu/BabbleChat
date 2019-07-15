@@ -10,6 +10,10 @@ const tweets = require('./routes/api/tweets');
 
 const User = require('./models/User'); 
 
+const socket = require('socket.io');
+const server = require('http').Server(app);
+const io = socket(server);
+
 
 mongoose.connect(db, { useNewUrlParser: true })
     .then(() => console.log('Connected to mongoDB'))
@@ -23,21 +27,31 @@ app.use(bodyParser.urlencoded({
 })); 
 app.use(bodyParser.json()); 
 
-app.get("/", (req, res) => {
-    const user = new User({
-        handle: "jim", 
-        email: "jim@jim.jim", 
-        password: "jimisgreat123"
-    })
-    user.save(); 
-    res.send("Hello Wd!"); 
-}); 
+
+
+// app.get("/", (req, res) => {
+//     const user = new User({
+//         handle: "jim", 
+//         email: "jim@jim.jim", 
+//         password: "jimisgreat123"
+//     })
+//     user.save(); 
+//     res.send("Hello Wd!"); 
+// }); 
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/frontend/public/index.html');
+});
 
 app.use("/api/users", users); 
 // app.use("/api/tweets", tweets); 
 
 const port = process.env.PORT || 5000; 
 
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
-}); 
+// app.listen(port, () => {
+//     console.log(`Listening on port ${port}`);
+// }); 
+
+server.listen(port, () => {
+    console.log(`Yo server done socketed, port: ${port} `);
+});
