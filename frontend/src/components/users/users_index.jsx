@@ -24,6 +24,13 @@ class UsersIndex extends React.Component {
 
   handleTalkToMeClick (e) {
     e.preventDefault();
+    let buddyId = e.currentTarget.id;
+    this.props.currentUser.buddies.push(buddyId);
+    this.props.edit(this.state.currentUser).then(() => {
+      console.log(this.props.currentUser);
+      console.log('buddy added to list');
+      console.log('chat functionality still needed');
+    });
   }
 
   render() {

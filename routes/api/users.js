@@ -123,6 +123,7 @@ router.patch("/current",
         // console.log(req.body.to_share)
         req.user.to_learn = req.body.to_learn
         req.user.to_share = req.body.to_share
+        // req.user.buddies = req.body.buddies
         req.user.save()
             .then((user) => res.json(user))
             .catch(err => console.log(err)); 

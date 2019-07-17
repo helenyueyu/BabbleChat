@@ -30,7 +30,7 @@ class UsersIndexItem extends React.Component {
                         <div className="chat-users-speaking">Speaks <div className="chat-users-tags">{languages[this.state.user.to_share]}</div></div>
                     </div>
 
-                    <button className="chat-users-start-convo-button" onClick={this.props.handleTalkToMeClick}>Talk To Me</button>
+                    <button className="chat-users-start-convo-button" id={this.state.user._id} onClick={this.props.handleTalkToMeClick}>Talk To Me</button>
                 </div>
             </div>
         )
