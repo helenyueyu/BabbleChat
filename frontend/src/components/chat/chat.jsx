@@ -137,7 +137,7 @@ class Chat extends React.Component {
                         <button type="submit" style={{display: 'none'}}/>
 
                         <button className="chat-box-trigger-emoji-list-button"
-                            onClick={(e) => this.triggerEmojiList(e)}><i class="far fa-smile"></i>
+                            onClick={(e) => this.triggerEmojiList(e)}><i className="far fa-smile"></i>
                         </button>
                     </form> 
 

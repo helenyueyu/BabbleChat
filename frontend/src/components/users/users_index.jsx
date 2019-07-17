@@ -3,7 +3,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Footer from '../footer/footer'; 
 import UsersIndexItem from './users_index_item';
-import languages from '../languages/languages'
+import languages from '../languages/languages';
 
 class UsersIndex extends React.Component {
   constructor(props) {
