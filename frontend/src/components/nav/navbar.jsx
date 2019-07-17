@@ -19,23 +19,20 @@ class NavBar extends React.Component {
   }
 
   handleClick1() {
-    debugger
     this.setState({
-      path: this.props.location.pathname
+      path: '/users'
     });
   }
 
   handleClick2() {
-    debugger
     this.setState({
-      path: this.props.location.pathname
+      path: '/chat'
     });
   }
 
   handleClick3() {
-    debugger
     this.setState({
-      path: this.props.location.pathname
+      path: '/profile'
     });
   }
   // Selectively render links dependent on whether the user is logged in
@@ -66,7 +63,6 @@ class NavBar extends React.Component {
 
 
   render() {
-    debugger
       return (
         <div className="navbar">
             <h1 className="navbar-title">BabbleChat</h1>
