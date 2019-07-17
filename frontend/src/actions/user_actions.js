@@ -34,6 +34,12 @@ export const fetchUser = id => dispatch => (
     .catch(err => console.log(err))
 );
 
+// export const fetchFriends = id => dispatch => (
+//   getFriends(id)
+//     .then(users => dispatch(receiveUsers(users)))
+//     .catch(err => console.log(err))
+// );
+
 // export const composeTweet = data => dispatch => (
 //   writeTweet(data)
 //     .then(tweet => dispatch(receiveNewTweet(tweet)))
