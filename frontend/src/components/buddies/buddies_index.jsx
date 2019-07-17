@@ -9,7 +9,7 @@ class BuddiesIndex extends React.Component {
         this.state = {
             currentUserId: this.props.session.currentUser,
             numBuddies: null,
-            babbleBuddies: {}
+            babbleBuddies: [] 
         };
         this.renderBuddiesItems = this.renderBuddiesItems.bind(this);
     }
@@ -27,12 +27,12 @@ class BuddiesIndex extends React.Component {
                 });
             }
         ); 
-        let friendsHash = {};
-        friends.forEach(friend  => {
-            friendsHash[friend.id] = {friend};
-        }); 
+        // let friendsHash = {};
+        // friends.forEach(friend  => {
+        //     friendsHash[friend.id] = {friend};
+        // }); 
 
-        this.setState({numBuddies: friendIds.length, babbleBuddies: friendsHash});
+        this.setState({numBuddies: friendIds.length, babbleBuddies: friends});
         
     }
 
@@ -40,7 +40,7 @@ class BuddiesIndex extends React.Component {
         if (this.state.numBuddies === 0) {
             return (<div>You have no buddies</div>)
         } else {
-            const users = this.state.babbleBuddies.map(user => (
+            let users = this.state.babbleBuddies.map(user => (
                 <BuddiesIndexItem key={user._id} user={user} />
             ))
             return users; 
@@ -49,25 +49,25 @@ class BuddiesIndex extends React.Component {
 
     render () {
         return (
-            <div>Index</div>
+        //     <div>Index</div>
 
-        ) 
+        // ) 
         // ( 
-        //     <>
-        //         <div className="chat-users-page">
-        //             <h2 className="chat-users-number">
-        //                 <span className="chat-users-digit-default">
-        //                     {this.state.numBuddies}
-        //                 </span>
-        //                 <span style={{ fontWeight: 'bold' }}>BabbleBuddies</span> 
-        //             </h2>  
-        //             <ul>
-        //                 { this.renderBuddiesItems() }
-        //             </ul>
-        //         </div>
-        //         <Footer />
-        //     </>
-        // );
+            <>
+                <div className="chat-users-page">
+                    <h2 className="chat-users-number">
+                        <span className="chat-users-digit-default">
+                            {this.state.numBuddies}
+                        </span>
+                        <span style={{ fontWeight: 'bold' }}> BabbleBuddies</span> 
+                    </h2>  
+                    <ul>
+                        { this.renderBuddiesItems() }
+                    </ul>
+                </div>
+                <Footer />
+            </>
+        );
     }
 }
 
