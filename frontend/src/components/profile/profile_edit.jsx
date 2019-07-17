@@ -28,7 +28,10 @@ class ProfileEdit extends React.Component {
     e.preventDefault();
     this.props.edit(this.state).then((user)=>{
         this.setState(user)
-    })
+    });
+    // pass profile's #renderEdit function as prop to this component
+    // call on submit so popout disappears when language is changed:
+    // this.props.renderEdit(e);
   }
 
   render() {
