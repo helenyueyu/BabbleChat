@@ -32,7 +32,7 @@ const UserSchema = new Schema({
     },
     buddies: {
         type: Array,
-        required: true
+        required: false
     }
 }); 
 

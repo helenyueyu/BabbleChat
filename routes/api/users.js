@@ -28,7 +28,8 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
         to_learn: req.user.to_learn,
         to_share: req.user.to_share,
         date: req.user.date, 
-        pic: req.user.pic
+        pic: req.user.pic,
+        buddies: req.user.buddies
     })
 })
 
