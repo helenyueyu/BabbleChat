@@ -12,7 +12,7 @@ class UsersIndex extends React.Component {
 
     this.state = {
       users: []
-    }
+    };
     this.possibleRoom = '';
     this.requestRoom = this.requestRoom.bind(this);
     this.socket = io();

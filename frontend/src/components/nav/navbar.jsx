@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, withRouter } from 'react-router-dom';
 import '../../index.css'; 
 
 class NavBar extends React.Component {
@@ -26,6 +26,7 @@ class NavBar extends React.Component {
       navbar2: false, 
       navbar3: false 
     })
+    debugger
   }
 
   handleClick2() {
@@ -69,7 +70,12 @@ class NavBar extends React.Component {
       }
   }
 
+  componentDidMount() {
+    debugger
+  }
+
   render() {
+    debugger
       return (
         <div className="navbar">
             <h1 className="navbar-title">BabbleChat</h1>
@@ -81,4 +87,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
