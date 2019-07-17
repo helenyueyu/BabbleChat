@@ -22,6 +22,10 @@ class UsersIndex extends React.Component {
     this.setState({ users: newState.users });
   }
 
+  handleTalkToMeClick (e) {
+    e.preventDefault();
+  }
+
   render() {
     if (this.state.users.length === 0) {
       return (<div>There are no Users</div>)
@@ -33,8 +37,8 @@ class UsersIndex extends React.Component {
         const users = []
         this.state.users.forEach(user => {
           user.to_share === this.props.currentUser.to_learn ? 
-            same_lang_users.unshift(<UsersIndexItem key={user._id} user={user} sameLang={true}/>) :
-            users.push(<UsersIndexItem key={user._id} user={user} sameLang={false} />)
+            same_lang_users.unshift(<UsersIndexItem key={user._id} user={user} sameLang={true} handleTalkToMeClick={this.handleTalkToMeClick}/>) :
+            users.push(<UsersIndexItem key={user._id} user={user} sameLang={false} handleTalkToMeClick={this.handleTalkToMeClick} />)
         })
       return (
         <>
