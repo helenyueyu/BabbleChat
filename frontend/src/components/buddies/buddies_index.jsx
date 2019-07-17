@@ -26,11 +26,7 @@ class BuddiesIndex extends React.Component {
                     friends.push(user);
                 });
             }
-        ); 
-        // let friendsHash = {};
-        // friends.forEach(friend  => {
-        //     friendsHash[friend.id] = {friend};
-        // }); 
+        );  
 
         this.setState({numBuddies: friendIds.length, babbleBuddies: friends});
         
@@ -48,11 +44,7 @@ class BuddiesIndex extends React.Component {
     }
 
     render () {
-        return (
-        //     <div>Index</div>
-
-        // ) 
-        // ( 
+        return ( 
             <>
                 <div className="chat-users-page">
                     <h2 className="chat-users-number">
